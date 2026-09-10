@@ -2,6 +2,11 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="theme-color" content="#1F4D3A">
 <title>Daily Greens</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -22,6 +27,7 @@
     --danger:#B23B2E;
   }
   *{box-sizing:border-box; margin:0; padding:0;}
+  html, body{height:100%;}
   body{
     font-family:'Inter', system-ui, sans-serif;
     background:#DEE3D9;
@@ -53,6 +59,20 @@
     background:var(--ink);
     border-radius:0 0 14px 14px;
     z-index:30;
+  }
+
+  /* On an actual phone screen, drop the mockup frame and fill the whole viewport like a real app */
+  @media (max-width: 520px){
+    body{ padding:0; background:var(--bg); align-items:stretch; }
+    .phone{
+      width:100%;
+      height:100vh;
+      height:100dvh;
+      border:none;
+      border-radius:0;
+      box-shadow:none;
+    }
+    .notch{ display:none; }
   }
   .screen{
     flex:1;
